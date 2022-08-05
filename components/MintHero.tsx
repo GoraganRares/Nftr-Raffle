@@ -216,7 +216,7 @@ export const MintHero = () => {
                   border='2px solid #17E800'
                   borderRadius='25px'
                   src="../nft.webp"
-                  alt='MaiarPunks#07555'
+                  alt='Hyped Kicks Club'
                   zIndex='2'
                   position='relative'                  
                   sx={{
@@ -237,8 +237,13 @@ export const MintHero = () => {
                   borderRadius='25px'
                   padding='35px'
                   paddingTop='7px'
+                  sx={{
+                    '@media screen and (max-width: 750px)': {
+                      left: '0px',
+                    },
+                  }}
                 >
-                  MaiarPunks#07555
+                  Hyped Kicks Club
                 </Text>
                 <Text
                   position='absolute'
@@ -251,8 +256,13 @@ export const MintHero = () => {
                   borderRadius='25px'
                   padding='35px'
                   paddingTop='7px'
+                  sx={{
+                    '@media screen and (max-width: 750px)': {
+                      right: '0px',
+                    },
+                  }}
                 >
-                  MaiarPunks#07555
+                  Hyped Kicks Club
                 </Text>
               </Box>
               {/* <NFTAllowlistEnabled

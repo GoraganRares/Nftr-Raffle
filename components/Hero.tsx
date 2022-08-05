@@ -156,6 +156,22 @@ export const Hero = () => {
           No other emotion is more powerful than FOMO.
           {/* <br /><br /> */}
         </Text>
+        <Image
+          margin='0 auto'
+          width='250px'
+          border='2px solid #17E800'
+          borderRadius='25px'
+          src="../nft.webp"
+          alt='Hyped Kicks Club'
+          zIndex='2'
+          position='relative'                  
+          sx={{
+            '@media screen and (max-width: 750px)': {
+              width:'100%',
+            },
+          }}
+        >
+        </Image>
         <Text
           fontSize='17px'
           textAlign='center'
