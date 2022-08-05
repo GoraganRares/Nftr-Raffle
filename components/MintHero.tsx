@@ -60,7 +60,7 @@ export const MintHero = () => {
     type: SCQueryType.INT,
     payload: {
       scAddress: smartContractAddress,
-      funcName: 'getDropTokensLeft',
+      funcName: 'totalEntries',
       args: [],
     },
     autoInit: isDropActive,
