@@ -182,7 +182,7 @@ export const MintHero = () => {
           },
         }}
       >
-        "Chance favors the prepared mind"
+        &quot;Chance favors the prepared mind&quot;
       </Text>
       <Text
         as="h3"

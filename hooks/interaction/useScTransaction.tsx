@@ -145,7 +145,6 @@ export function useScTransaction(cb?: (params: ScTransactionCb) => void) {
         func,
         gasLimit,
         args,
-        data,
         chainID: networkConfig[chainType].shortId,
       });
 
