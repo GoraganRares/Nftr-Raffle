@@ -1,0 +1,110 @@
+import {
+  Modal,
+  Text,
+  ModalContent,
+  Flex,
+  Spinner,
+  ModalBody,
+  useDisclosure,
+  ModalOverlay,
+  ModalCloseButton,
+} from '@chakra-ui/react';
+import { FC } from 'react';
+import { networkConfig, chainType } from '../config/network';
+import { useEffectOnlyOnUpdate } from '../hooks/tools/useEffectOnlyOnUpdate';
+import { shortenHash } from '../utils/shortenHash';
+
+interface TransactionPendingModalProps {
+  isOpen: boolean;
+  successTxHash?: string;
+  txError?: string;
+  additionalMessage?: string;
+}
+
+const CustomModalOverlay = () => {
+  return <ModalOverlay bg="blackAlpha.700" backdropFilter="blur(5px)" />;
+};
+
+export const TransactionPendingModal: FC<TransactionPendingModalProps> = ({
+  isOpen = false,
+  successTxHash,
+  txError,
+  additionalMessage,
+}) => {
+  const { isOpen: opened, onOpen, onClose } = useDisclosure();
+
+  useEffectOnlyOnUpdate(() => {
+    if (isOpen || successTxHash || txError) {
+      onOpen();
+    }
+  }, [isOpen, successTxHash, txError]);
+
+  const txTitle = () => {
+    if (txError) {
+      return `Transaction status: ${txError}.`;
+    }
+    if (successTxHash) {
+      return 'Thank you for your trust! As soon as the number of entries drops to 0, the smart contract will randomly pick the winner of the displayed prize';
+    }
+    return 'Transaction pending.';
+  };
+
+  return (
+    <Modal isOpen={opened} size="sm" onClose={onClose} isCentered>
+      <CustomModalOverlay />
+      <ModalContent
+        bgColor="elvenTools.dark.darker"
+        px={6}
+        pt={7}
+        pb={10}
+        position="relative"
+      >
+        <ModalCloseButton _focus={{ outline: 'none' }} />
+        <ModalBody>
+          <Text textAlign="center" fontWeight="semibold" fontSize="xl">
+            {txTitle()}
+          </Text>
+
+          {!txError && (
+            <Flex alignItems="center" justifyContent="center" mt={8}>
+              {successTxHash && (
+                <Text
+                  as="a"
+                  href={`${networkConfig[chainType].explorerAddress}/transactions/${successTxHash}`}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  borderColor="elvenTools.color2.darker"
+                  borderWidth={2}
+                  bgColor="transparent"
+                  py={2}
+                  px={6}
+                  rounded="xl"
+                  fontWeight="normal"
+                  color="elvenTools.white"
+                  userSelect="none"
+                  _hover={{ bg: 'elvenTools.color2.darker' }}
+                  transition="background-color .3s"
+                >
+                  {shortenHash(successTxHash)}
+                </Text>
+              )}
+              {!successTxHash && !txError && (
+                <Spinner
+                  thickness="3px"
+                  speed="0.4s"
+                  color="elvenTools.color2.base"
+                  size="xl"
+                />
+              )}
+            </Flex>
+          )}
+          {additionalMessage && !successTxHash && !txError && (
+            <Text textAlign="center" mt={5} fontWeight="semibold" fontSize="md">
+              {additionalMessage}
+            </Text>
+          )}
+        </ModalBody>
+      </ModalContent>
+    </Modal>
+  );
+};
