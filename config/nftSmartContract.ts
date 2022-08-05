@@ -7,13 +7,13 @@ export const smartContractAddress =
   'erd1qqqqqqqqqqqqqpgqdc6jzqlfmfy03erkhkt4286dn6aen4hcg20sauezx0';
 
 // Amount of the NFTs in the collection
-export const collectionSize = 450;
+export const collectionSize = 45000;
 
 // Number of the NFTs for one address in total
-export const tokensLimitPerAddressTotal = 10;
+export const tokensLimitPerAddressTotal = 100;
 
 // Collection ticker
-// export const collectionTicker = 'Raffle';
+export const collectionTicker = 'Raffle';
 
 // Start or pause minting process. UI will react on this. Remember to keep itin in sync with Smart Contract. This is very important.
 export const isMintingStarted = true;

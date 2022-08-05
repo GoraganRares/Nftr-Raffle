@@ -287,7 +287,7 @@ export const MintHero = () => {
             width='100%'
             mb='20px'
           >
-            * Once entries hit 0, this will automatically trigger the smart contract which is going to chose a single winner. Spread the news using #GLEGLD
+            * Thank you!
           </Text> */}
           <MintDisconnect enabled={['auth', 'about']} />
         </Box>

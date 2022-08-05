@@ -7,7 +7,7 @@ export const dappHostname = process.env.NEXT_PUBLIC_DAPP_HOST;
 export const defaultMetaTags = {
   title: 'NFTR Raffle',
   description:
-    'Once entries hit 0, this will automatically trigger the smart contract which is going to chose a single winner. Spread the news using #GLEGLD',
+    'Thank you!',
   image: `${dappHostname}/fundal.png`,
 };
 
