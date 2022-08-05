@@ -18,7 +18,7 @@ export function useMintTransaction(cb?: (params: ScTransactionCb) => void) {
       gasLimit:
         mintTxBaseGasLimit + (mintTxBaseGasLimit / 1.4) * (tokensAmount - 1),
       args: [new U32Value(tokens)],
-      // value: TokenPayment.egldFromBigInteger(totalPayment),]
+      // value: TokenPayment.egldFromBigInteger(totalPayment),
     });
   };
 
