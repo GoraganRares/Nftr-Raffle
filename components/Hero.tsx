@@ -200,7 +200,7 @@ export const Hero = () => {
           <Image
             width='10px'
             marginLeft='5px'
-            src="../dot.svg"
+            src="../red-dot.svg"
             alt='dot'
           >
           </Image>
@@ -216,7 +216,7 @@ export const Hero = () => {
           Trust your intuition
           {/* <br /><br /> */}
         </Text>
-        <HeaderMenuButtons enabled={['auth', 'mint', 'about']} />
+        {/* <HeaderMenuButtons enabled={['auth', 'mint', 'about']} /> */}
       </Box>
     </Box>
   );
