@@ -32,8 +32,8 @@ export const NFTLeftToMint: FC<NFTLeftToMintProps> = ({
           display='flex' alignItems='center'
           fontSize={{ base: 'md', sm: 'xl' }} fontWeight="bold"
         >
-          Total Entries:  
-          <Text
+          Total Entries: 0
+          {/* <Text
             color="elvenTools.color2.base"
             fontSize="3xl"
             fontWeight="800"
@@ -41,7 +41,7 @@ export const NFTLeftToMint: FC<NFTLeftToMintProps> = ({
             mr={1}
           >
             {isDropActive ? dropData?.data.data : data?.data?.data}
-          </Text>
+          </Text> */}
           {/* <Text
               display='flex' alignItems='center'
               fontSize={{ base: 'md', sm: 'xl' }} fontWeight="bold"
